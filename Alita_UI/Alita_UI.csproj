@@ -25,4 +25,8 @@
     <Folder Include="Support\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PageObjects\PageObjects.csproj" />
+  </ItemGroup>
+
 </Project>
