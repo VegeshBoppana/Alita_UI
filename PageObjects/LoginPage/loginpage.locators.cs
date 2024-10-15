@@ -12,6 +12,9 @@ namespace PageObjects.LoginPage
         protected By UsernameFiled = By.CssSelector("#user-name");
         protected By PasswordField = By.CssSelector("#password");
         protected By LoginButton = By.CssSelector(".btn_action");
+        protected By Homepageindicator = By.XPath("//div[text()='Products']");
+        protected By threedots = By.XPath("//button[text()='Open Menu']");
+        string logoutScript = "document.querySelector('a[href=\"./index.html\"]').click();";
 
     }
 }
