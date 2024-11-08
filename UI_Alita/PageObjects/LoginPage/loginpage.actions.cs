@@ -3,27 +3,27 @@ using OpenQA.Selenium;
 public class LoginPageActions
 {
     private IWebDriver driver;
-    private SeleniumHelpers seleniumHelpers;
+    private SeleniumMethods seleniumMethods;
 
     public LoginPageActions(IWebDriver driver)
     {
         this.driver = driver;
-        seleniumHelpers = new SeleniumHelpers(driver);
+        seleniumMethods = new SeleniumMethods();
     }
 
     public void EnterUsername(string username)
     {
-        seleniumHelpers.SendKeys(LoginPageLocators.UsernameField, username);
+        seleniumMethods.SendKeys(driver.FindElement(LoginPageLocators.UsernameField), username);
     }
 
     public void EnterPassword(string password)
     {
-        seleniumHelpers.SendKeys(LoginPageLocators.PasswordField, password);
+        seleniumMethods.SendKeys(driver.FindElement(LoginPageLocators.PasswordField), password);
     }
 
     public void ClickLoginButton()
     {
-        seleniumHelpers.Click(LoginPageLocators.LoginButton);
+        seleniumMethods.Click(driver.FindElement(LoginPageLocators.LoginButton));
     }
 
     public bool IsLoginSuccessful()
